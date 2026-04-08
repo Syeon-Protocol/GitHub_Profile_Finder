@@ -1,0 +1,72 @@
+body {
+  font-family: "Google Sans Code";
+  font-size: larger;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(7, 7, 7);
+  color: #fff;
+  height: 100vh;
+  align-items: center;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(87, 86, 86);
+  padding: 2em;
+  border: none;
+  border-radius: 0.5em;
+  align-items: center;
+  gap: 0.5em;
+  width: 90%;
+  max-width: 50em;
+}
+.card input {
+  margin-top: 0.5em;
+  border: none;
+  border-radius: 0.3em;
+  padding: 1em;
+  margin-bottom: 0.5em;
+}
+.card button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  padding: 1em;
+  width: 10em;
+  cursor: pointer;
+  margin-bottom: 0.5em;
+}
+.card button:hover {
+  border: 0.1em white solid;
+}
+.results {
+  display: flex;
+  gap: 1em;
+  flex-direction: row;
+}
+.result-text {
+  margin-left: 1em;
+  display: flex;
+  /* gap: 1em; */
+  flex-direction: column;
+}
+#pic img {
+  height: 15em;
+  width: 15em;
+  border-radius: 100%;
+}
+.result-text a {
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 0.5em;
+  text-align: center;
+  margin-top: 1em;
+  padding: 1em;
+}
+/* todo
+apply google font
+*/
