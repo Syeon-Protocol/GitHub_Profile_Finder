@@ -11,6 +11,7 @@ body {
   align-items: center;
 }
 .card {
+  max-height: 90%;
   display: flex;
   flex-direction: column;
   background-color: rgb(87, 86, 86);
@@ -46,6 +47,10 @@ body {
   display: flex;
   gap: 1em;
   flex-direction: row;
+  align-items: center;
+  align-items: flex-start;
+  margin-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 .result-text {
   margin-left: 1em;
@@ -59,14 +64,15 @@ body {
   border-radius: 100%;
 }
 .result-text a {
+  display: block;
   color: white;
   background-color: black;
   border: none;
   border-radius: 0.5em;
   text-align: center;
   margin-top: 1em;
-  padding: 1em;
+  padding: 0.5em;
 }
-/* todo
-apply google font
-*/
+.result-text p {
+  margin: 0.5em;
+}

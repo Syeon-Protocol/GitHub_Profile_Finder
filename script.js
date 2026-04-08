@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     resultText.innerHTML = ``;
     resultPicture.innerHTML = ``;
     const inputText = profileInput.value.trim();
-    console.log(inputText);
 
     if (inputText === "") {
       resultText.textContent = `Please Enter some value`;
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
       resultText.textContent = "Searching....";
       const read = await fecthData(inputText);
       display(read);
-      console.log(read);
     } catch (error) {
       resultText.textContent = `oops! user not found`;
     }
@@ -33,10 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const respond = await fetch(url);
     if (!respond.ok) {
       throw new Error("User not found");
-      return;
     }
     const data = await respond.json();
-    // console.log(data);
     return data;
   }
   function display(read) {
@@ -50,23 +46,27 @@ document.addEventListener("DOMContentLoaded", () => {
       followers,
       following,
     } = read;
+    resultText.textContent = "";
     resultPicture.innerHTML = `
     <img src='${avatar_url}'></img>
     `;
-    resultText.innerHTML = `Name: ${name}<br> 
-    Bio: ${bio}<br>
-    Followers: ${followers}<br>
-    Following: ${following}<br>
-    Public Repos: ${public_repos}<br>
-    Location: ${userLocation || "Location Not found"}<br>
-    <a href="${html_url}">Visit Profile</a>
-    `;
+    let nameP = document.createElement("p");
+    nameP.textContent = `Name: ${name}`;
+    resultText.appendChild(nameP);
+    let bioP = document.createElement("p");
+    bioP.textContent = `Bio: ${bio || "Not found"}`;
+    resultText.appendChild(bioP);
+    let follP = document.createElement("p");
+    follP.textContent = `Followers ${followers} Following ${following}`;
+    resultText.appendChild(follP);
+    let publicRepo = document.createElement("p");
+    publicRepo.textContent = `No. of Public Repo: ${public_repos}`;
+    resultText.appendChild(publicRepo);
+    let locationP = document.createElement("p");
+    locationP.textContent = `Location: ${userLocation || "Not found"}`;
+    resultText.appendChild(locationP);
+    let link = document.createElement("p");
+    link.innerHTML = `<a href="${html_url}">Visit Profile</a>`;
+    resultText.appendChild(link);
   }
 });
-
-/* Todo
-clear input
-descriptive result
-show load state
-error handling
-*/
