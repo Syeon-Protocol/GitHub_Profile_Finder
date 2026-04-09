@@ -76,3 +76,19 @@ body {
 .result-text p {
   margin: 0.5em;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .results {
+    flex-direction: column;
+    align-items: center;
+  }
+  #pic img {
+    height: 5em;
+    width: 5em;
+    border-radius: 100%;
+  }
+  .card {
+    overflow-y: auto;
+  }
+}
